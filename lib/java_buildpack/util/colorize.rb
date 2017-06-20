@@ -102,7 +102,9 @@ class String
   private
 
   def tty?(value)
-    $stdout.tty? ? value : self
+    puts $stdout.tty?
+    value
+    # $stdout.tty? ? value : self
   end
 
 end
