@@ -99,7 +99,7 @@ module JavaBuildpack
 
     private
 
-    BUILDPACK_MESSAGE = "#{'----->'.cyan.bold} #{'Java Buildpack'.blue.bold} Version: %s".freeze
+    BUILDPACK_MESSAGE = "#{'----->'.cyan.bold} #{'Java Buildpack'.blue.bold} %s".freeze
 
     LOAD_ROOT = (Pathname.new(__FILE__).dirname + '..').freeze
 
