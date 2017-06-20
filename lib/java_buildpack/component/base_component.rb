@@ -16,6 +16,7 @@
 require 'fileutils'
 require 'java_buildpack/component'
 require 'java_buildpack/util/cache/application_cache'
+require 'java_buildpack/util/colorize'
 require 'java_buildpack/util/format_duration'
 require 'java_buildpack/util/shell'
 require 'java_buildpack/util/space_case'
@@ -86,10 +87,10 @@ module JavaBuildpack
       # @return [Void]
       def download(version, uri, name = @component_name)
         download_start_time = Time.now
-        print "-----> Downloading #{name} #{version} from #{uri.sanitize_uri} "
+        print "#{'----->'.cyan.bold} Downloading #{name} #{version} from #{uri.sanitize_uri} "
 
         JavaBuildpack::Util::Cache::ApplicationCache.new.get(uri) do |file, downloaded|
-          puts downloaded ? "(#{(Time.now - download_start_time).duration})" : '(found in cache)'
+          puts downloaded ? "(#{(Time.now - download_start_time).duration})" : '(found in cache)'.green
           yield file
         end
       end
