@@ -16,95 +16,87 @@
 class String
 
   def bg_black
-    tty? "\e[40m#{self}\e[0m"
+    "\e[40m#{self}\e[0m"
   end
 
   def bg_blue
-    tty? "\e[44m#{self}\e[0m"
+    "\e[44m#{self}\e[0m"
   end
 
   def bg_brown
-    tty? "\e[43m#{self}\e[0m"
+    "\e[43m#{self}\e[0m"
   end
 
   def bg_cyan
-    tty? "\e[46m#{self}\e[0m"
+    "\e[46m#{self}\e[0m"
   end
 
   def bg_gray
-    tty? "\e[47m#{self}\e[0m"
+    "\e[47m#{self}\e[0m"
   end
 
   def bg_green
-    tty? "\e[42m#{self}\e[0m"
+    "\e[42m#{self}\e[0m"
   end
 
   def bg_magenta
-    tty? "\e[45m#{self}\e[0m"
+    "\e[45m#{self}\e[0m"
   end
 
   def bg_red
-    tty? "\e[41m#{self}\e[0m"
+    "\e[41m#{self}\e[0m"
   end
 
   def black
-    tty? "\e[30m#{self}\e[0m"
+    "\e[30m#{self}\e[0m"
   end
 
   def blink
-    tty? "\e[5m#{self}\e[25m"
+    "\e[5m#{self}\e[25m"
   end
 
   def blue
-    tty? "\e[34m#{self}\e[0m"
+    "\e[34m#{self}\e[0m"
   end
 
   def bold
-    tty? "\e[1m#{self}\e[22m"
+    "\e[1m#{self}\e[22m"
   end
 
   def brown
-    tty? "\e[33m#{self}\e[0m"
+    "\e[33m#{self}\e[0m"
   end
 
   def cyan
-    tty? "\e[36m#{self}\e[0m"
+    "\e[36m#{self}\e[0m"
   end
 
   def gray
-    tty? "\e[37m#{self}\e[0m"
+    "\e[37m#{self}\e[0m"
   end
 
   def green
-    tty? "\e[32m#{self}\e[0m"
+    "\e[32m#{self}\e[0m"
   end
 
   def italic
-    tty? "\e[3m#{self}\e[23m"
+    "\e[3m#{self}\e[23m"
   end
 
   def magenta
-    tty? "\e[35m#{self}\e[0m"
+    "\e[35m#{self}\e[0m"
   end
 
   def red
-    tty? "\e[31m#{self}\e[0m"
+    "\e[31m#{self}\e[0m"
   end
 
   def reverse_color
-    tty? "\e[7m#{self}\e[27m"
+    "\e[7m#{self}\e[27m"
   end
 
   def underline
-    tty? "\e[4m#{self}\e[24m"
-  end
-
-  private
-
-  def tty?(value)
-    puts $stdout.tty?
-    value
-    # $stdout.tty? ? value : self
+    "\e[4m#{self}\e[24m"
   end
 
 end
